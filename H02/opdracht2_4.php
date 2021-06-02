@@ -4,5 +4,6 @@ $a = "\"omgaan";
 $b = "met";
 $c = "teleu";
 
-$volledigeZin = "De cursus “omgaan met teleurstellingen” kan vanavond helaas niet doorgaan. - Herman Finkers";
+$volledigeZin = "De cursus ". $a. " ". $b. " ". $c.
+    "rstellingen” kan vanavond helaas niet doorgaan. - Herman Finkers";
 echo $volledigeZin;
