@@ -5,14 +5,24 @@
 <html>
 <head>
     <title>PHP Opdrachten</title>
+    <style>
+        body {
+            float: left;
+        }
+    </style>
 </head>
 <body>
 <?php
-$zwemclubs = array("De spartelkuikens 25", "De waterbuffels 32", "Plonsmderin 11", "Bommetje 23");
+$zwemclub["De spartelkuikens "] = 25;
+$zwemclub["De waterbuffels "] = 32;
+$zwemclub["Plonsmderin "] = 11;
+$zwemclub["Bommetje "] = 23;
 
-foreach($zwemclubs as $lid) {
-    echo "<img src='../img/zwemmer" . $lid. "'>";
+
+foreach($zwemclub as $club => $leden) {
+        echo "$club $leden<img src=../img/zwemmer.png><br>";
 }
+
 ?>
 </body>
 </html>
