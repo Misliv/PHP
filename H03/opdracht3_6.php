@@ -19,8 +19,12 @@ $zwemclub["Plonsmderin "] = 11;
 $zwemclub["Bommetje "] = 23;
 
 
-foreach($zwemclub as $club => $leden) {
-        echo "$club $leden<img src=../img/zwemmer.png><br>";
+foreach($zwemclub as $club => $club_leden) {
+
+        echo "$club $club_leden<br>";
+       if($club_leden % 5 == 5) {
+           $club_leden="img src=../img/zwemmer.png";
+       }
 }
 
 ?>
