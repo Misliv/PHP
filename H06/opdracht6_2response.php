@@ -2,19 +2,22 @@
 $email = $_POST["email"];
 $pass = $_POST["wachtwoord"];
 
-try {
-    $dbh = new PDO('mysql:host=localhost;dbname=phpschool', "root", "");
+$servername = "localhost";
+$dbname = "phpschool";
+$username = "root";
+$password = "";
 
-    foreach ($dbh->query("SELECT * FROM user WHERE email='" . $email . "'") as $row) {
+try {
+    $conn = new PDO("mysql:host={$servername};dbname={$dbname}", $username, $password);
+    echo "Connected successfully";
+} catch (PDOException $e) {
+    echo "Connection failed: " . $e->getMessage();
+}
+
+    foreach ($conn->query("SELECT * FROM user WHERE email='" . $email . "'") as $row) {
         if ($row["email"] == $email && $row["wachtwoord"] == $pass) {
             echo "Welkom!";
         } else {
             echo "Geen toegang!";
         }
     }
-
-    $dbh = null;
-} catch (PDOException $e) {
-    print "Error!: " . $e->getMessage() . "<br/>";
-    die();
-}
