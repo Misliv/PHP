@@ -1,22 +1,20 @@
 <?php
-$loggedIn = false;
-if ($_GET != null) {
-    $email = $_GET["email"];
-    $password = $_GET["password"];
-    login($email, $password);
-}
+$email = $_POST["email"];
+$pass = $_POST["wachtwoord"];
 
-function login($email, $password) {
-    if ($email == "piet@worldonline.nl" && $password == "doetje123" || $email == "klaas@carpets.nl" && $password == "snoepje777" || $email == "truushendriks@wegweg.nl" && $password == "arkiearkie201") {
-        $loggedIn = true;
-        if ($loggedIn) {
-            echo 'Welkom';
-        }
-    } else {
-        $loggedIn = false;
-        if (!$loggedIn) {
-            echo 'Sorry, geen toegang!';
+try {
+    $dbh = new PDO('mysql:host=localhost;dbname=phpschool', "root", "");
+
+    foreach ($dbh->query("SELECT * FROM user WHERE email='" . $email . "'") as $row) {
+        if ($row["email"] == $email && $row["wachtwoord"] == $pass) {
+            echo "Welkom!";
+        } else {
+            echo "Geen toegang!";
         }
     }
-}
 
+    $dbh = null;
+} catch (PDOException $e) {
+    print "Error!: " . $e->getMessage() . "<br/>";
+    die();
+}
