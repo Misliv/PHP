@@ -23,7 +23,6 @@
   } else {
       $message = "Inloggen";
   }
-  print_r($_SESSION);
   ?>
 
 <html>
@@ -41,6 +40,7 @@
     <input type="submit" name="knop">
 </form>
 <p><a href="website.php">website</a></p>
+<p><a href="admin.php">Admingedeelte website</a></p>
 <p><a href="login.php?loguit">uitloggen</a></p>
 </body>
 </html>
