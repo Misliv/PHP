@@ -7,16 +7,23 @@
      "jans" => "1236",
  );
 
- if(isset($_POST['knop'])
-     && isset($users[$_POST["login"]])
-     && $users[$_POST["login"]] == $_POST['pwd']) {
 
-     $_SESSION["user"] = $_POST["login"];
-     $message = "Welkom!!! ".$_SESSION["user"];
- } else {
-     $message = "Inloggen";
- }
- ?>
+  if (isset($_GET["loguit"])) {
+      $_SESSION = array();
+      session_destroy();
+  }
+
+  if(isset($_POST['knop'])
+      && isset($users[$_POST["login"]])
+      && $users[$_POST["login"]] == $_POST['pwd']) {
+
+      $_SESSION["user"] = $_POST["login"];
+      $message = "Welkom!!! ".$_SESSION["user"];
+  } else {
+      $message = "Inloggen";
+  }
+  print_r($_SESSION);
+  ?>
 
 <html>
 <body>
@@ -33,5 +40,6 @@
     <input type="submit" name="knop">
 </form>
 <p><a href="website.php">website</a></p>
+<p><a href="login.php?loguit">uitloggen</a></p>
 </body>
 </html>
