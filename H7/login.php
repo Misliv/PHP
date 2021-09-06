@@ -1,14 +1,18 @@
 <?php
+ session_start();
+
  $users = array(
      "janjaap" => "1234",
-     "bert" => "4321",
-     "jans" => "2143",
+     "bert" => "1235",
+     "jans" => "1236",
  );
 
  if(isset($_POST['knop'])
      && isset($users[$_POST["login"]])
      && $users[$_POST["login"]] == $_POST['pwd']) {
-     $message = "Welkom!!! ";
+
+     $_SESSION["user"] = $_POST["login"];
+     $message = "Welkom!!! ".$_SESSION["user"];
  } else {
      $message = "Inloggen";
  }
@@ -28,5 +32,6 @@
     </div>
     <input type="submit" name="knop">
 </form>
+<p><a href="website.php">website</a></p>
 </body>
 </html>
