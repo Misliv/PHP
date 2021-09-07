@@ -19,9 +19,8 @@
           "pwd" => $users[$_POST["login"]]['pwd'],
           "rol" => $users[$_POST["login"]]['rol']);
       header('Location: website.php');
-      $message = "Welkom " .$_SESSION["user"]["naam"] . " met de rol "
+      $message = "Welkom " . $_SESSION["user"]["naam"] . " met de rol "
           . $_SESSION["user"]["rol"];
-
   } else {
       $message = "Inloggen";
   }
