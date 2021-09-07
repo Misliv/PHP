@@ -8,3 +8,9 @@
  } else {
      header('location: login.php');
  }
+
+
+ ?>
+
+<p><a href="admin.php">Admingedeelte website</a></p>
+<p><a href="login.php?loguit">uitloggen</a></p>
