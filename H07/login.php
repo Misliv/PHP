@@ -1,6 +1,6 @@
 <?php
  session_start();
-
+$loggedIn = false;
  $users = array(
      "may" => array("pwd" => "1234", "rol" => "Administrator"),
      "bert" => array("pwd" => "1235", "rol" => "Gebruiker"),
@@ -21,6 +21,7 @@
       header('Location: website.php');
       $message = "Welkom " . $_SESSION["user"]["naam"] . " met de rol "
           . $_SESSION["user"]["rol"];
+
   } else {
       $message = "Inloggen";
   }
