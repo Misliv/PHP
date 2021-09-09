@@ -1,7 +1,5 @@
 <?php
  session_start();
-$loggedIn = false;
-$_SESSION['message'] = 'Gegevens kloppen niet';
 
  $users = array(
      "may" => array("pwd" => "1234", "rol" => "Administrator"),
@@ -24,17 +22,14 @@ $_SESSION['message'] = 'Gegevens kloppen niet';
       $message = "Welkom " . $_SESSION["user"]["naam"] . " met de rol "
           . $_SESSION["user"]["rol"];
 
-  } else if (isset($_SESSION['message']))
-      {
-          echo $_SESSION['message'];
-          unset($_SESSION['message']);
+  } else {
+      $message = "Inloggen";
   }
-
   ?>
 
 <html>
 <body>
-<h1>Inloggen</h1>
+<h1><?php echo $message; ?></h1>
 <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
     <div class="form-group">
         <label for="login">Login:</label>
