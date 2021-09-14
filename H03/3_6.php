@@ -16,6 +16,7 @@ $waterbuffels = 32;
 $plonsmderin = 11;
 $bommetje = 23;
 
+$clubs = array("De spartelkuikens", "De waterbuffels", "Plonsmderin", "Bommetje");
 $zwemmers = array($spartelkuikens, $waterbuffels, $plonsmderin, $bommetje);
 
 function DeEcho($number) {
@@ -23,9 +24,9 @@ function DeEcho($number) {
         echo "<img src='../img/zwemmer.png'>";
     }
 }
-
+foreach ($clubs as $club) {
 foreach ($zwemmers as $zwem) {
-    echo "".$zwem."";
+    echo "<br>".$club."     ".$zwem."";
 
 switch ($zwem) {
     case $zwem < 5:
@@ -55,8 +56,8 @@ switch ($zwem) {
         case $zwem < 35:
         DeEcho(6);
         break;
-
-}
+        }
+    }
 }
 ?>
 </body>
