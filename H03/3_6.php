@@ -24,9 +24,12 @@ function DeEcho($number) {
         echo "<img src='../img/zwemmer.png'>";
     }
 }
+
 foreach ($clubs as $club) {
+    echo "".$club."<br>";
+}
 foreach ($zwemmers as $zwem) {
-    echo "<br>".$club."     ".$zwem."";
+    echo "<br>".$club." ".$zwem."";
 
 switch ($zwem) {
     case $zwem < 5:
@@ -57,7 +60,7 @@ switch ($zwem) {
         DeEcho(6);
         break;
         }
-    }
+
 }
 ?>
 </body>
