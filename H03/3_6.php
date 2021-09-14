@@ -1,4 +1,5 @@
 <?php
+
 ?>
 
 <!DOCTYPE html>
@@ -6,31 +7,15 @@
 <head>
     <title>Zwemclubs</title>
     <style>
-        table, td {
-            outline: black solid 1px;
-            border-collapse: collapse;
-            padding: 10px;
-        }
     </style>
 </head>
 <body>
-<table>
-    <tr>
-        <td>De spartelkuikens</td>
-        <td>25</td>
-    </tr>
-    <tr>
-        <td>De waterbuffels</td>
-        <td>32</td>
-    </tr>
-    <tr>
-        <td>Plonsmderin</td>
-        <td>11</td>
-    </tr>
-    <tr>
-        <td>Bommetje</td>
-        <td>23</td>
-    </tr>
-</table>
+<?php
+$zwemmers = array("De spartelkuikens" => 25, "De waterbuffels" => 32, "Plonsmderin" => 11, "Bommetje" => 23);
+
+foreach ($zwemmers as $zwem => $aantal) {
+    echo " ".$zwem." ".$aantal."<br>";
+}
+?>
 </body>
 </html>
