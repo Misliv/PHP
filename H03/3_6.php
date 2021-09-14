@@ -24,43 +24,40 @@ function DeEcho($number) {
         echo "<img src='../img/zwemmer.png'>";
     }
 }
-
 foreach ($clubs as $club) {
-    echo "".$club."<br>";
-}
 foreach ($zwemmers as $zwem) {
-    echo "<br>".$club." ".$zwem."";
+    echo "<br>" . $club . " " . $zwem . "";
 
-switch ($zwem) {
-    case $zwem < 5:
-        DeEcho(0);
-        break;
+    switch ($zwem) {
+        case $zwem < 5:
+            DeEcho(0);
+            break;
 
         case $zwem < 10:
-        DeEcho(1);
-        break;
+            DeEcho(1);
+            break;
 
         case $zwem < 15:
-        DeEcho(2);
-        break;
+            DeEcho(2);
+            break;
 
         case $zwem < 20:
-        DeEcho(3);
-        break;
+            DeEcho(3);
+            break;
 
         case $zwem < 25:
-        DeEcho(4);
-        break;
+            DeEcho(4);
+            break;
 
         case $zwem < 30:
-        DeEcho(5);
-        break;
+            DeEcho(5);
+            break;
 
         case $zwem < 35:
-        DeEcho(6);
-        break;
+            DeEcho(6);
+            break;
         }
-
+    }
 }
 ?>
 </body>
