@@ -14,8 +14,8 @@ function login ($email, $wachtwoord)
             echo 'Welkom';
         }
     } else {
-            $loggedIn = false;
-            if (!$loggedIn) {
-                echo "Geen toegang.";}
+        $loggedIn = false;
+        if (!$loggedIn) {
+            echo "Geen toegang.";}
     }
 }
