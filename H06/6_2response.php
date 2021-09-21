@@ -1,4 +1,5 @@
 <?php
+$dbh = new PDO('mysql:host=localhost;dbname=phpschool;port=3306', 'root', '');
 $loggedIn = false;
 if ($_GET != null) {
     $email = $_GET["email"];
@@ -19,3 +20,5 @@ function login ($email, $wachtwoord)
             echo "Geen toegang.";}
     }
 }
+?>
+<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
