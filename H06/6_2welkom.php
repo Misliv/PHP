@@ -1,23 +1,24 @@
 <?php
-session_start();
+include "6_2config.php";
 
-if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
-    header("location: login.php");
-    exit;
+// Check user login or not
+if(!isset($_SESSION['uname'])){
+    header('Location: 6_2login.php');
+}
+
+// logout
+if(isset($_POST['but_logout'])){
+    session_destroy();
+    header('Location: 6_2login.php');
 }
 ?>
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Welcome</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <style>
-        body{ font: 14px sans-serif; text-align: center; }
-    </style>
-</head>
+<!doctype html>
+<html>
+<head></head>
 <body>
-<h1 class="my-5">Hi, <b><?php echo htmlspecialchars($_SESSION["username"]); ?></b>. Welcome to our site.</h1>
+<h1>Homepage</h1>
+<form method='post' action="">
+    <input type="submit" value="Logout" name="but_logout">
+</form>
 </body>
 </html>
