@@ -6,7 +6,7 @@
         $email_err = $wachtwoord_err = $login_err = "";
 
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
-            if (empty(trim($_POST["email    "]))) {
+            if (empty(trim($_POST["email"]))) {
                 $email_err = "Zet een email in.";
             } else {
                 $email = trim($_POST['email']);
@@ -61,11 +61,27 @@
     <title>inlogformulier</title>
 </head>
 <body>
-<form action="6_2response.php" method="get" id="container">
-    Email <input placeholder="Email" type="email" name="email" id="email" required><br>
-    Wachtwoord <input placeholder="Wachtwoord" type="password" name="wachtwoord" id="wachtwoord" required><br>
-    <input type="submit" name="knop" value="verstuur">
-
+<?php if (!empty($login_err)){
+    echo '<div class="alert alert-danger">'.$login_err.'</div>';
+    }
+    ?>
+}
+<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
+    <div class="form-group">
+        <label>email</label>
+        <input type="email" name="email" class="form-control <?php echo (!empty($email_err)) ? 'is-invalid' : ''; ?>">
+        value="<?php echo $email; ?>">
+        <span class="invalid-feedback><?php echo $email_err; ?>"
+    </span>
+    </div>
+    <div class="form-group">
+        <label>Wachtwoord</label>
+        <input type="password" name="wachtwoord" class="form-control <?php echo (!empty($wachtwoord_err)) ? 'is-invalid' : ''; ?>">
+        </span>
+    </div>
+    <div class="form-group">
+        <input type="submit" class="btn btn-primary" value="login">
+    </div>
 </form>
 </body>
 </html>
