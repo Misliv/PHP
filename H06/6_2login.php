@@ -14,7 +14,7 @@ if (isset($_POST['but_submit'])){
 
         if ($count > 0) {
             $_SESSION['email'] = $email;
-            header('Location: 6_2welkom.php');
+            header('Location: 6_2welkom.php ');
         } else {
             echo "Email en/of wachtwoord kloppen niet.";
         }
@@ -27,7 +27,7 @@ if (isset($_POST['but_submit'])){
 </style>
 <body>
 <div class="container">
-    <form method="post" action="">
+    <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
         <div id="div_login">
             <h1>Login</h1>
             <div>

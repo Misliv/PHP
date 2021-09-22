@@ -2,7 +2,7 @@
 include "6_2config.php";
 
 // Check user login or not
-if(!isset($_SESSION['uname'])){
+if(!isset($_SESSION['email'])){
     header('Location: 6_2login.php');
 }
 
@@ -17,8 +17,7 @@ if(isset($_POST['but_logout'])){
 <head></head>
 <body>
 <h1>Homepage</h1>
-<form method='post' action="">
-    <input type="submit" value="Logout" name="but_logout">
+<p>Welkom</p>
 </form>
 </body>
 </html>
