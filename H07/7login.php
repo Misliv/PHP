@@ -18,7 +18,7 @@
       $_SESSION["user"] = array("naam" => $_POST["login"],
           "pwd" => $users[$_POST["login"]]['pwd'],
           "rol" => $users[$_POST["login"]]['rol']);
-      header('Location: website.php');
+      header('Location: 7website.php');
       $message = "Welkom " . $_SESSION["user"]["naam"] . " met de rol "
           . $_SESSION["user"]["rol"];
 

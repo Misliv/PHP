@@ -11,5 +11,5 @@
 
  ?>
 
-<p><a href="admin.php">Admingedeelte website</a></p>
-<p><a href="login.php?loguit">Uitloggen</a></p>
+<p><a href="7admin.php">Admingedeelte website</a></p>
+<p><a href="7login.php?loguit">Uitloggen</a></p>
