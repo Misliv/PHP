@@ -1,11 +1,12 @@
 <?php
  session_start();
+ include ("7config.php");
 
- $users = array(
-     "may" => array("pwd" => "1234", "rol" => "Administrator"),
-     "bert" => array("pwd" => "1235", "rol" => "Gebruiker"),
-     "jans" => array("pwd" => "1236", "rol" => "Administrator")
- );
+ //* $users = array(
+ //    "may" => array("pwd" => "1234", "rol" => "Administrator"),
+ //   "bert" => array("pwd" => "1235", "rol" => "Gebruiker"),
+ //    "jans" => array("pwd" => "1236", "rol" => "Administrator")
+ //);
 
   if (isset($_GET["loguit"])) {
       $_SESSION = array();
