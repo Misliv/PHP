@@ -28,7 +28,7 @@ if (isset($_POST['but_submit'])){
         <div id="div_login">
             <h1>Login</h1>
             <div>
-                <input type="text" class="textbox" id="txt_email" name="txt_email" placeholder="Email"/>
+                <input type="text" class="textbox" id="txt_naam" name="txt_naam" placeholder="Naam"/>
             </div>
             <div>
                 <input type="password" class="textbox" id="txt_email" name="txt_pwd" placeholder="Wachtwoord"/>
