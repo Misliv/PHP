@@ -1,23 +1,39 @@
 <?php
-include "6_2config.php";
-
-// Check user login or not
-if(!isset($_SESSION['email'])){
-    header('Location: 6_2login.php');
-}
-
-// logout
-if(isset($_POST['but_logout'])){
-    session_destroy();
-    header('Location: 6_2login.php');
+include ('functions.php');
+if (!isLoggedIn()) {
+    $_SESSION['msg'] = "Je moet ingelogd zijn";
+    header('location: login.php');
 }
 ?>
-<!doctype html>
+<!DOCTYPE html>
 <html>
-<head></head>
+<head>
+    <title>Home</title>
+</head>
 <body>
-<h1>Homepage</h1>
-<p>Welkom</p>
-</form>
+<div class="header">
+    <h2>Homepage</h2>
+</div>
+<div class="content">
+    <?php if (isset($_SESSION['success'])):?>
+    <div class="error success"">
+    <h3>
+        <?php echo $_SESSION['success'];
+        unset($_SESSION['success']);
+        ?>
+    </h3>
+</div>
+<?php endif ?>
+<div>
+    <?php if (isset($_SESSION['user'])):?>
+        <strong><?php echo $_SESSION['user']['username']; ?></strong>
+
+        <small>
+            <i  style="color: #888;">(<?php echo ucfirst($_SESSION['user']['user_type']); ?>)</i>
+            <br>
+            <a href="home.php?logout='1'" style="color: red;">logout</a>
+        </small>
+    <?php endif ?>
+</div>
 </body>
 </html>
