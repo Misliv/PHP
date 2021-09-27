@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <head>
-    <title>Login page</title>
+    <title>Login page V4</title>
 </head>
 <body>
 <form action="validate.php" method="post">

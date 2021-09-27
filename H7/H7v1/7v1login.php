@@ -22,7 +22,7 @@
           . $_SESSION["user"]["rol"];
 
   } else {
-      echo "Inloggen";
+      echo "Inloggen V1";
   }
   ?>
 

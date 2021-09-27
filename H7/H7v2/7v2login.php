@@ -4,7 +4,7 @@ include ('functions.php')
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Login</title>
+    <title>Login V2</title>
 </head>
 <body>
 <div class="header">
