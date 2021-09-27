@@ -1,22 +1,22 @@
 <?php
-include "6_2config.php";
+include "7v3config.php";
 
 if (isset($_POST['but_submit'])){
-    $email = mysqli_real_escape_string($con, $_POST['txt_email']);
-    $wachtwoord = mysqli_real_escape_string($con, $_POST['txt_pwd']);
+    $username = mysqli_real_escape_string($con, $_POST['txt_username']);
+    $password = mysqli_real_escape_string($con, $_POST['txt_pwd']);
 
-    if ($email != "" && $wachtwoord != "") {
-        $sql_query = "select count(*) as cntUser from login where email = '".$email."' and wachtwoord ='".$wachtwoord."'";
+    if ($username != "" && $password != "") {
+        $sql_query = "select count(*) as cntUser from login7 where username = '".$username."' and password ='".$password."'";
         $result =   mysqli_query($con, $sql_query);
         $row = mysqli_fetch_array($result);
 
         $count = $row['cntUser'];
 
         if ($count > 0) {
-            $_SESSION['email'] = $email;
-            header('Location: 6_2welkom.php ');
+            $_SESSION['username'] = $username;
+            header('Location: 7v3welkom.php ');
         } else {
-            echo "Email en/of wachtwoord kloppen niet.";
+            echo "Gebruikersnaam en/of wachtwoord kloppen niet.";
         }
     }
 }
@@ -28,10 +28,10 @@ if (isset($_POST['but_submit'])){
         <div id="div_login">
             <h1>Login</h1>
             <div>
-                <input type="text" class="textbox" id="txt_naam" name="txt_naam" placeholder="Naam"/>
+                <input type="text" class="textbox" id="txt_username" name="txt_username" placeholder="Username" required/>
             </div>
             <div>
-                <input type="password" class="textbox" id="txt_email" name="txt_pwd" placeholder="Wachtwoord"/>
+                <input type="password" class="textbox" id="txt_pwd" name="txt_pwd" placeholder="Password" required/>
             </div>
             <div>
                 <input type="submit" value="Submit" name="but_submit"/>

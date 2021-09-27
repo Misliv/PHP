@@ -21,14 +21,13 @@
       $message = "Welkom " . $_SESSION["user"]["naam"] . " met de rol "
           . $_SESSION["user"]["rol"];
 
-  } //else {
-    //  $error= "Gebruikersnaam en/of wachtwoord kloppen niet.";
-  //}
+  } else {
+      echo "Inloggen";
+  }
   ?>
 
 <html>
 <body>
-<h1>Inloggen</h1>
 <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
     <div class="form-group">
         <label for="login">Login:</label>
@@ -39,7 +38,6 @@
         <input type="password" name="pwd" value="" required>
     </div>
     <input type="submit" name="knop">
-   <!--  ?php echo $error; ?> */ -->
 </form>
 </body>
 </html>
