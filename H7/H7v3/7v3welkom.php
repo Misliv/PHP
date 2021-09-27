@@ -1,5 +1,5 @@
 <?php
-include ('7v3config.php');
+include('7v3config.php');
 
 if (!isset($_SESSION['uname'])) {
     header('Location: 7v3login.php');
