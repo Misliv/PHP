@@ -14,7 +14,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $name = test_input($_POST["name"]);
     $password = test_input($_POST["password"]);
-    $stmt = $conn-> prepare("SELECT * FROM userlogin");
+    $stmt = $conn->prepare("SELECT * FROM userlogin");
     $stmt->execute();
     $users = $stmt->fetchAll();
 
@@ -24,30 +24,26 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             ($user['password'] == $password)) {
 
             header("Location: 7v4userpage.php");
-        } else {
-            echo "Gegevens kloppen niet.";
-            die();
-        }
-    }
-}
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        } else if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
-    $adminname = test_input($_POST["name"]);
-    $password = test_input($_POST["password"]);
-    $stmt = $conn-> prepare("SELECT * FROM adminlogin");
-    $stmt->execute();
-    $users = $stmt->fetchAll();
+            $adminname = test_input($_POST["adminname"]);
+            $password = test_input($_POST["password"]);
+            $stmt = $conn->prepare("SELECT * FROM adminlogin");
+            $stmt->execute();
+            $users = $stmt->fetchAll();
 
-    foreach ($users as $user) {
+            foreach ($users as $user) {
 
-        if (($user['name'] == $adminname) &&
-            ($user['password'] == $password)) {
+                if (($user['name'] == $adminname) &&
+                    ($user['password'] == $password)) {
 
-                header("Location: 7v4adminpage.php");
-        } else {
-            echo "Gegevens kloppen niet.";
-            die();
+                    header("Location: 7v4adminpage.php");
+                } else {
+                    echo "Gegevens kloppen niet.";
+                    die();
+                }
+            }
         }
     }
 }
