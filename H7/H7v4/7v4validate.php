@@ -22,6 +22,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         if (($user['adminname'] == $adminname) &&
             ($user['password'] == $password)) {
+
                 header("Location: adminpage.php");
         } else {
             echo "Gegevens kloppen niet.";

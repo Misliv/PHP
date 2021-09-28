@@ -1,25 +1,21 @@
 <?php
-include('7v3config.php');
+include "6_2config.php";
 
-if (!isset($_SESSION['uname'])) {
-    header('Location: 7v3login.php');
+if(!isset($_SESSION['email'])){
+    header('Location: 6_2login.php');
 }
 
-if (isset($_POST['but_logout'])) {
+if(isset($_POST['but_logout'])){
     session_destroy();
-    header('Location: index.php');
+    header('Location: 6_2login.php');
 }
 ?>
-
-<!DOCTYPE html>
+<!doctype html>
 <html>
-<head>
-    <title>Home</title>
-</head>
+<head></head>
 <body>
-    <h1>Homepage</h1>
-<form method="post" action="">
-    <input type="submit" value="Logout" name="but_logout">
+<h1>Homepage</h1>
+<p>Welkom</p>
 </form>
 </body>
 </html>
