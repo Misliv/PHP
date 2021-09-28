@@ -15,19 +15,19 @@
       && isset($users[$_POST["login"]])
       && $users[$_POST["login"]] ["pwd"] == $_POST['pwd']) {
       $_SESSION["user"] = array("naam" => $_POST["login"],
-          "pwd" => $users[$_POST["login"]]['pwd'],
-          "rol" => $users[$_POST["login"]]['rol']);
-      header('Location: 7v1website.php');
+                                "pwd" => $users[$_POST["login"]]['pwd'],
+                                "rol" => $users[$_POST["login"]]['rol']);
       $message = "Welkom " . $_SESSION["user"]["naam"] . " met de rol "
-          . $_SESSION["user"]["rol"];
+                           . $_SESSION["user"]["rol"];
 
   } else {
-      echo "Inloggen V1";
+      $message = "Inloggen";
   }
   ?>
 
 <html>
 <body>
+<h1><?php echo $message; ?></h1>
 <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
     <div class="form-group">
         <label for="login">Login:</label>
@@ -39,5 +39,7 @@
     </div>
     <input type="submit" name="knop">
 </form>
+<p><a href="7v1website.php">Website</a></p>
+<p><a href="7v1login.php?uitloggen">uitloggen</a></p>
 </body>
 </html>
