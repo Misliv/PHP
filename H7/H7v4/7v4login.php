@@ -3,15 +3,15 @@
     <title>Login page V4</title>
 </head>
 <body>
-<form action="validate.php" method="post">
+<form action="7v4validate.php" method="post">
     <div class="login-box">
         <h1>Login</h1>
         <div class="textbox">
-            <input type="text" placeholder="Adminname" name="adminname" value="">
+            <input type="text" placeholder="name" name="name" value="">
         </div>
 
         <div class="textbox">
-            <input type="password" placeholder="Password" name="passwrod" value="">
+            <input type="password" placeholder="Password" name="password" value="">
         </div>
         <input class="button" type="submit" name="login" value="Sign in">
     </div>
