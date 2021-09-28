@@ -6,10 +6,10 @@
 
 
  } else {
-     header('location: login.php');
+     header('location: 7v1login.php');
  }
 
  ?>
 
-<p><a href="7admin.php">Admingedeelte website</a></p>
-<p><a href="7login.php?loguit">Uitloggen</a></p>
+<p><a href="7v1admin.php">Admingedeelte website</a></p>
+<p><a href="7v1login.php?loguit">Uitloggen</a></p>

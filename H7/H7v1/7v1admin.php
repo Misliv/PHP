@@ -11,5 +11,5 @@ if (isset($_SESSION["user"]) && $_SESSION["user"]["rol"] == "Administrator") {
 
 ?>
 
-<p><a href="7website.php">Terug naar de website</a></p>
-<p><a href="7login.php?loguit">Uitloggen</a></p>
+<p><a href="7v1website.php">Terug naar de website</a></p>
+<p><a href="7v1login.php?loguit">Uitloggen</a></p>

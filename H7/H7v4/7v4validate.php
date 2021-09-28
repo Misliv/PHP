@@ -10,6 +10,11 @@ function test_input($data) {
     return $data;
 }
 
+if(isset($_POST['but_logout'])){
+    session_destroy();
+    header('Location: 7v4login.php');
+}
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $name = test_input($_POST["name"]);
