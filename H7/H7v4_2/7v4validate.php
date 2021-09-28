@@ -24,6 +24,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $users = $stmt->fetchAll();
 
     foreach ($users as $user) {
+
         if (($user['name'] == $name) &&
             ($user['password'] == $password)) {
 
