@@ -17,12 +17,14 @@
       $_SESSION["user"] = array("naam" => $_POST["login"],
                                 "pwd" => $users[$_POST["login"]]['pwd'],
                                 "rol" => $users[$_POST["login"]]['rol']);
+
       $message = "Welkom " . $_SESSION["user"]["naam"] . " met de rol "
                            . $_SESSION["user"]["rol"];
 
   } else if (isset($_POST['knop'])
-      && isset($users[$_POST["login"]])
-      && $users[$_POST["login"]] ["pwd"] !== $_POST['login']['pwd']) {
+      && isset($users [$_POST ["login"]])
+      && $users[$_POST["login"]] ["pwd"] !== $_POST ['pwd'])
+       {
       $message = "Gegevens kloppen niet.";
   } else {
       $message = "Inloggen";

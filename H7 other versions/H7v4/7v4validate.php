@@ -1,6 +1,6 @@
 <?php
 
-include_once ('7v4connection.php');
+include_once('7v4connection.php');
 
 function test_input($data) {
 
