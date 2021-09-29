@@ -2,7 +2,7 @@
  session_start();
  $users = array(
      "may" => array("pwd" => "1234", "rol" => "Administrator"),
-    "bert" => array("pwd" => "1235", "rol" => "Gebruiker"),
+     "bert" => array("pwd" => "1235", "rol" => "Gebruiker"),
      "jans" => array("pwd" => "1236", "rol" => "Administrator")
  );
 
@@ -20,6 +20,10 @@
       $message = "Welkom " . $_SESSION["user"]["naam"] . " met de rol "
                            . $_SESSION["user"]["rol"];
 
+  } else if (isset($_POST['knop'])
+      && isset($users[$_POST["login"]])
+      && $users[$_POST["login"]] ["pwd"] !== $_POST['login']['pwd']) {
+      $message = "Gegevens kloppen niet.";
   } else {
       $message = "Inloggen";
   }
@@ -40,6 +44,7 @@
     <input type="submit" name="knop">
 </form>
 <p><a href="7v1website.php">Website</a></p>
+<p><a href="7v1admin.php">Admin website</a></p>
 <p><a href="7v1login.php?uitloggen">uitloggen</a></p>
 </body>
 </html>
