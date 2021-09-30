@@ -1,11 +1,24 @@
 <?php
 session_start();
 
-$db = mysqli_connect('localhost', 'root', '', 'phpschool');
+$conn = "";
 
-$username = "";
-$email = "";
-$errors = array();
+try {
+    $servername = "localhost:3306";
+    $dbname = "h7login";
+    $username = "root";
+    $password = "";
+
+    $conn = new PDO(
+        "mysql:host=$servername; dbname=h7login",
+        $username, $password
+    );
+
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+}
+catch (PDOException $e) {
+    echo "Connection failed: ".$e->getMessage();
+}
 
 function e($val){
     global $db;
@@ -35,7 +48,7 @@ function isLoggedIn() {
 if (isset($_GET['logout'])) {
     session_destroy();
     unset($_SESSION['user']);
-    header("location: login.php");
+    header("location: 7v2login.php");
 }
 
 if (isset($_POST['submit'])) {
@@ -65,11 +78,11 @@ function login() {
             if ($logged_in_user['user_type'] == 'admin') {
                 $_SESSION['user'] = $logged_in_user;
                 $_SESSION['success'] = "Je bent ingelogd";
-                header('location: home.php');
+                header('location: 7v2home.php');
             } else {
                 $_SESSION['user'] = $logged_in_user;
                 $_SESSION['success'] = "Je bent ingelogd";
-                header('location: home.php');
+                header('location: 7v2home.php');
             }
         } else {
             array_push($errors, "Gebruikersnaam en/of wachtwoord kloppen niet");

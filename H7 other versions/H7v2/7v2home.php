@@ -1,5 +1,5 @@
 <?php
-    include ('functions.php');
+    include ('7v2functions.php');
     if (!isLoggedIn()) {
         $_SESSION['msg'] = "Je moet ingelogd zijn";
         header('location: login.php');
@@ -31,7 +31,7 @@
     <small>
         <i style="color: #888;">(<?php echo ucfirst($_SESSION['user']['user_type']); ?>)</i>
         <br>
-        <a href="home.php?logout='1'" style="color: red;">logout</a>
+        <a href="7v2home.php?logout='1'" style="color: red;">logout</a>
     </small>
     <?php endif ?>
 </div>
