@@ -19,7 +19,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $name = test_input($_POST["name"]);
     $password = test_input($_POST["password"]);
-    $stmt = $conn->prepare("SELECT * FROM userlogin");
+    $stmt = $conn->prepare("SELECT * FROM h7login");
     $stmt->execute();
     $users = $stmt->fetchAll();
 
