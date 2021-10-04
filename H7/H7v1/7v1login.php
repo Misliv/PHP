@@ -47,6 +47,6 @@
 </form>
 <p><a href="7v1website.php">Website</a></p>
 <p><a href="7v1admin.php">Admin website</a></p>
-<p><a href="7v1login.php?uitloggen">uitloggen</a></p>
+<p><a href="7v1login.php?uitloggen">Uitloggen</a></p>
 </body>
 </html>
