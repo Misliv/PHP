@@ -19,7 +19,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $name = test_input($_POST["name"]);
     $password = test_input($_POST["password"]);
-    $stmt = $conn->prepare("SELECT * FROM h7login");
+    $stmt = $conn->prepare("SELECT * FROM login");
     $stmt->execute();
     $users = $stmt->fetchAll();
 
@@ -44,7 +44,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
                     header("Location: 7v4adminpage.php");
                 } else {
-                    echo "Gegevens kloppen niet.";
+                    header("Location: 7v4login.php");
                     die();
                 }
             }
