@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <head>
     <title>Login page V4</title>
 </head>
@@ -7,11 +7,11 @@
     <div class="login-box">
         <h1>Login</h1>
         <div class="textbox">
-            <input type="text" placeholder="name" name="name" value="">
+            <input type="text" placeholder="name" name="name" value="" required>
         </div>
 
         <div class="textbox">
-            <input type="password" placeholder="Password" name="password" value="">
+            <input type="password" placeholder="Password" name="password" value="" required>
         </div>
         <input class="button" type="submit" name="login" value="Sign in">
     </div>
