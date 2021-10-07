@@ -1,6 +1,5 @@
 <?php
 ?>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,11 +12,12 @@
 </head>
 <body>
 <?php
-    for ($i = 0; $i<=100; $i++) {
-       for ($j = 0; $j<$i; $j++) {
-           echo "*";
-       }
-       echo "*<br>";    }
-    ?>
+    for ($i = 0; $i <= 50; $i++) {
+        for ($j = 0; $j < $i; $j++) {
+            echo "*";
+        }
+        echo "*<br>";
+}
+?>
 </body>
 </html>
