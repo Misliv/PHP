@@ -1,5 +1,8 @@
 <?php
  session_start();
+
+$errors = array();
+
  $users = array(
      "may" => array("pwd" => "1234", "rol" => "Administrator"),
      "bert" => array("pwd" => "1235", "rol" => "Gebruiker"),

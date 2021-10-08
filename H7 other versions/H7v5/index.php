@@ -1,5 +1,9 @@
 <?php
     include ('functions.php');
+    if (!isLoggedIn()) {
+        $_SESSION['msg'] = "Je moet eerst inloggen";
+        header('location: login.php');
+    }
 ?>
 
 <!DOCTYPE html>
